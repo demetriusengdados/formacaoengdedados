@@ -1,0 +1,7 @@
+created [materialized] view des_vendas as select
+	dc.cliente, dc.estado, dc.sexo;
+
+from dimensaocliente dc join fatovendas fv on
+	fv.chavecliente = dc.chavecliente join
+	dimensaovendedor dv on
+	dv.chavevendedor = fv.chavevendedor;
